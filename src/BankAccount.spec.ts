@@ -31,10 +31,11 @@ describe('Bank Account', () => {
         bankAccount.withdraw(80)
         bankAccount.makeDeposit(10)
 
-        expect(bankAccount.getStatement()).toEqual([
-            { amount: 100, balance: 100},
-            { amount: -80, balance: 20},
-            { amount: 10, balance: 30},
-        ])
+        expect(bankAccount.getStatement()).toEqual(
+            '| DEBIT | CREDIT | BALANCE |\n' +
+            '| 100.00 |  | 100.00 |\n' +
+            '|  | 80.00 | 20.00 |\n' +
+            '| 10.00 |  | 30.00 |\n'
+        )
     })
 });

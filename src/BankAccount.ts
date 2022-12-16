@@ -25,6 +25,15 @@ export class BankAccount {
     }
 
     getStatement() {
-        return this.operations;
+        const format = new Intl.NumberFormat('en-US', {minimumFractionDigits: 2});
+        let statement = "| DEBIT | CREDIT | BALANCE |\n"
+        for (const operation of this.operations) {
+            if (operation.amount > 0) {
+                statement += `| ${format.format(operation.amount)} |  | ${format.format(operation.balance)} |\n`
+            } else {
+                statement += `|  | ${format.format(-operation.amount)} | ${format.format(operation.balance)} |\n`
+            }
+        }
+        return statement
     }
 }
