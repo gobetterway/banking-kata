@@ -32,7 +32,7 @@ describe('Bank Account', () => {
         bankAccount.makeDeposit(10)
 
         expect(bankAccount.getStatement()).toEqual(
-            '| DEBIT | CREDIT | BALANCE |\n' +
+            '| CREDIT | DEBIT | BALANCE |\n' +
             '| 100.00 |  | 100.00 |\n' +
             '|  | 80.00 | 20.00 |\n' +
             '| 10.00 |  | 30.00 |\n'
