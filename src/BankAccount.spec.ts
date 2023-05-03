@@ -1,6 +1,8 @@
 import {BankAccount} from "./BankAccount";
 
+
 describe('Bank Account', () => {
+
     it('should accept deposit', () => {
         const bankAccount = new BankAccount()
 
@@ -38,4 +40,5 @@ describe('Bank Account', () => {
             '| 10.00 |  | 30.00 |\n'
         )
     })
+
 });
